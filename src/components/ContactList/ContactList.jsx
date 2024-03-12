@@ -1,9 +1,9 @@
 import Contact from "../Contact/Contact";
 
-const ContactList = ({ data, onDelete }) => {
+const ContactList = ({ onSearch, onDelete }) => {
   return (
     <ul>
-      {data.map((item) => (
+      {onSearch.map((item) => (
         <li key={item.id}>
           <Contact {...item} onDelete={onDelete} />
         </li>
