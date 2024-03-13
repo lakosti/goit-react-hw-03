@@ -1,8 +1,15 @@
+import css from "./SearchBox.module.css";
+
 const SearchBox = ({ value, onFilter }) => {
   return (
-    <div>
-      <span>Find contacts by name:</span>
-      <input type="text" value={value} onChange={(e) => onFilter(e.target.value)} />
+    <div className={css.searchWrap}>
+      <span className={css.searchName}>Find contacts by name:</span>
+      <input
+        className={css.seacrhInput}
+        type="text"
+        value={value}
+        onChange={(e) => onFilter(e.target.value)}
+      />
     </div>
   );
 };

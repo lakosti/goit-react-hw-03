@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import ContactList from "../ContactList/ContactList";
 import ContactForm from "../ContactForm/ContactForm";
 import SearchBox from "../SearchBox/SearchBox";
-import "./App.module.css";
+import css from "./App.module.css";
 import { nanoid } from "nanoid";
 
 const data = [
@@ -41,16 +41,18 @@ function App() {
   );
 
   return (
-    <div>
-      <h1>Phonebook</h1>
+    <div className={css.phoneBookWrap}>
+      <h1 className={css.phoneBookTitle}>Phonebook</h1>
       <ContactForm onAddContact={handleAddContact} />
       <SearchBox value={search} onFilter={setSearch} />
       {items.length ? (
         <ContactList onSearch={searchContact} onDelete={handleDelete} />
       ) : (
-        <p>Sorry no contacts</p>
+        <p className={css.notification}>no contacts</p>
       )}
-      {searchContact.length === 0 && items.length !== 0 && <p>Not found</p>}
+      {searchContact.length === 0 && items.length !== 0 && (
+        <p className={css.notification}>Not found</p>
+      )}
     </div>
   );
 }
