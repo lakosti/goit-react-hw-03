@@ -31,7 +31,7 @@ const ContactForm = ({ onAddContact }) => {
         </label>
         <label className={css.formLabel}>
           <span className={css.formText}>Number</span>
-          <Field className={css.formInput} placeholder="xxx-xx-xx" type="number" name="number" />
+          <Field className={css.formInput} placeholder="xxx-xx-xx" type="text" name="number" />
           <ErrorMessage className={css.errorMsg} name="number" component="span" />
         </label>
         <button className={css.formBtn} type="submit" aria-label="Add new contact">
