@@ -46,7 +46,7 @@ function App() {
       <ContactForm onAddContact={handleAddContact} />
       <SearchBox value={search} onFilter={setSearch} />
       {items.length ? (
-        <ContactList onSearch={searchContact} onDelete={handleDelete} />
+        <ContactList contactList={searchContact} onDelete={handleDelete} />
       ) : (
         <p className={css.notification}>no contacts</p>
       )}
